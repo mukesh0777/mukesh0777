@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<div id="map"></div>
+
+<div *ngFor="let capitale of capitales" (click)="showCapitaleInfo(capitale)" class="capitale-marker">
+  {{ capitale.ville }}
+</div>
+
+<div *ngIf="selectedCapitale" class="capitale-info">
+  <h3>{{ selectedCapitale.ville }}</h3>
+  <p>Pays: {{ selectedCapitale.pays }}</p>
+  <p>Population: {{ selectedCapitale.population }}</p>
+</div>
+
+
+
+</html>

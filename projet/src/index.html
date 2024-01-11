@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test Beecoming</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <div>
+    <h1>Application Capitales</h1>
+  </div> 
+
+<nav>
+  <ul>
+    <li><a routerLink="/carte">Carte</a></li>
+    <li><a routerLink="/liste-capitales">Liste des Capitales</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
+<div id="map" style="height: 400px;"></div>
+<div *ngFor="let capital of capitales" (click)="selectCapital(capital)">
+  {{ capital.pays }} - {{ capital.ville }}
+</div>
+
+<div *ngIf="selectedCapital">
+  <h3>{{ selectedCapital.ville }}</h3>
+  <p>Pays: {{ selectedCapital.pays }}</p>
+  <p>Population: {{ selectedCapital.population }}</p>
+</div>
+</body>
+
+</html>
